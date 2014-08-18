@@ -1,8 +1,12 @@
 <% if @posts.any? %>
+<ul class="posts">
 	<% @posts.each do |post| %>
+	<li class="post">
+		<%= image_tag post.picture.url(:medium), class: 'uploaded_pic' %><br>
 		<%= post.title %>
-		<%= image_tag post.picture.url(:medium), class: 'uploaded_pic' %>
+	</li>
 	<% end %>
+</ul>
 <% else %>
 		No posts have been added	
 <% end %>

@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'aws-sdk'
 
+gem 'devise'
+
 gem 'paperclip', github: 'thoughtbot/paperclip'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -31,6 +33,8 @@ gem 'spring',        group: :development
 group :development, :test do
 	gem 'rspec-rails'
 	gem 'capybara'
+	gem 'database_cleaner'
+	gem 'warden'
 end
 
 # Use ActiveModel has_secure_password

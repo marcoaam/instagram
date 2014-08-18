@@ -4,6 +4,11 @@ describe 'Posts' do
 
 	context 'Without posts created' do
 
+		before(:each) do
+			marco = User.create(email: 'm@m.com', password: '12345678', password_confirmation: '12345678')
+			login_as marco
+		end
+
 		it 'shows a message' do
 			visit '/posts'
 			expect(page).to have_content 'No posts have been added'
@@ -37,6 +42,12 @@ describe 'Posts' do
 		it 'shows all posts' do
 			visit '/posts'
 			expect(page).to have_content 'Amazing day at Makers'
+		end
+
+		it 'does not show posts if s user is not logged in' do
+			visit ('/posts')
+			click_link 'New post'
+			expect(page).to have_content 'Sign in'
 		end
 
 	end
