@@ -1,0 +1,8 @@
+<% if @posts.any? %>
+	<% @posts.each do |post| %>
+		<%= post.title %>
+	<% end %>
+<% else %>
+		No posts have been added	
+<% end %>
+<%= link_to('New post', new_post_path) %>
