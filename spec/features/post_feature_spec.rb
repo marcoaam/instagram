@@ -17,6 +17,15 @@ describe 'Posts' do
 			expect(current_path).to eq posts_path
 		end
 
+		it 'can create a post with a picture' do
+			visit '/posts'
+			click_link 'New post'
+			fill_in 'Title', with: 'Amazing day at Makers'
+			attach_file 'Picture', Rails.root.join('spec/images/surf2.jpg')
+			click_button 'Create Post'
+			expect(page).to have_css('img.uploaded_pic')
+		end
+
 	end
 
 	context 'With posts created' do
@@ -31,5 +40,5 @@ describe 'Posts' do
 		end
 
 	end
-	
+
 end
