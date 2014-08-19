@@ -18,6 +18,8 @@ class Post < ActiveRecord::Base
   end
 
   def tags_list=(all_tags)
+    return if all_tags.empty?
+    all_tags.split(' ').each {|tag| self.tags << Tag.create(text: tag)}
   end
 	
 end

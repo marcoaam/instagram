@@ -6,11 +6,18 @@ RSpec.describe Post, :type => :model do
 		let(:post) { Post.create(title: 'Great day') }
 
 		it 'has no tags' do
-			expect(post.tags.all).to be_empty
+			post.tags_list = ''
+			expect(post.tags).to be_empty
 		end
 
 		it 'has one tag' do
-			
+			post.tags_list = '#makers'
+			expect(post.tags.first.text).to eq '#makers'
+		end
+
+		it 'has more than tag' do
+			post.tags_list = '#makers #webdevelopment'
+			expect(post.tags.all.count).to eq 2
 		end
 
 	end
