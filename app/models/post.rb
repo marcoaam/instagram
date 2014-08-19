@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
 
   def tags_list=(all_tags)
     return if all_tags.empty?
-    all_tags.split(' ').each {|tag| self.tags << Tag.create(text: tag)}
+    all_tags.split(' ').uniq.each {|tag| self.tags << Tag.find_or_create_by(text: tag)}
   end
 	
 end

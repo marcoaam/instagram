@@ -20,6 +20,18 @@ RSpec.describe Post, :type => :model do
 			expect(post.tags.all.count).to eq 2
 		end
 
+		it 'doesnt save a duplicate tag' do
+			post.tags_list = '#makers #makers'
+			expect(post.tags.all.count).to eq 1
+		end
+
+		it 'uses the same tag if the tag already exist' do
+			post2 = Post.create(title: 'Awesome')
+			post2.tags_list = '#makers'
+			post.tags_list = '#makers'
+			expect(Tag.all.count).to eq 1
+		end
+
 	end
 
 end
