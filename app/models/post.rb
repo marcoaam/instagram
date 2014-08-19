@@ -12,5 +12,11 @@ class Post < ActiveRecord::Base
                     }
 
 	validates_attachment_content_type :picture, :content_type => /\Aimage\/.*\Z/
+
+  def tags_list
+  end
+
+  def tags_list=(all_tags)
+  end
 	
 end

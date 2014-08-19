@@ -50,6 +50,18 @@ describe 'Posts' do
 			expect(page).to have_content 'Sign in'
 		end
 
+		it 'shows a sign in button' do
+			visit ('/posts')
+			click_link 'Sign in'
+			expect(page).to have_content 'Sign in'
+		end
+
+		it 'shows a sign up button' do
+			visit ('/posts')
+			click_link 'Sign up'
+			expect(page).to have_content 'Sign up'
+		end
+
 	end
 
 end

@@ -2,7 +2,9 @@
 <ul class="posts">
 	<% @posts.each do |post| %>
 	<li class="post">
+		<% if post.picture? %>
 		<%= image_tag post.picture.url(:medium), class: 'uploaded_pic' %><br>
+		<% end %>
 		<%= post.title %>
 	</li>
 	<% end %>
