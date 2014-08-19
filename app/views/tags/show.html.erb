@@ -1,6 +1,6 @@
-<% if @posts.any? %>
-<ul class="posts">
-	<% @posts.each do |post| %>
+<% if @tag.posts.any? %>
+<ul class="tags">
+	<% @tag.posts.each do |post| %>
 	<li class="post">
 		<% if post.picture? %>
 		<%= image_tag post.picture.url(:medium), class: 'uploaded_pic' %><br>
@@ -12,7 +12,4 @@
 	</li>
 	<% end %>
 </ul>
-<% else %>
-		No posts have been added	
 <% end %>
-<%= link_to('New post', new_post_path) %>
