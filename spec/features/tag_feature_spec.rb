@@ -37,5 +37,7 @@ describe 'Tagging' do
 			expect(page).not_to have_content('Web development')
 			expect(page).to have_content('Love coding')
 		end
+
 	end
+	
 end
