@@ -4,6 +4,6 @@
 		<% end %>
 		<%= post.title %>
 		<% post.tags.each do |tag| %>
-			<%= link_to(tag.text, tag_path(tag) ) %>
+			<%= link_to(tag.text, tag_path(tag), class: 'tag' ) %>
 		<% end %>
 </div>
