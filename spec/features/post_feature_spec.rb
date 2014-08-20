@@ -46,14 +46,12 @@ describe 'Posts' do
 
 		it 'does not show posts if s user is not logged in' do
 			visit ('/posts')
-			click_link 'New post'
-			expect(page).to have_content 'Sign in'
+			expect(page).not_to have_link 'New post'
 		end
 
 		it 'shows a sign in button' do
 			visit ('/posts')
-			click_link 'Sign in'
-			expect(page).to have_content 'Sign in'
+			expect(page).to have_button 'Sign in'
 		end
 
 		it 'shows a sign up button' do

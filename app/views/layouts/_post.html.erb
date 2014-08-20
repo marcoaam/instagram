@@ -1,0 +1,7 @@
+<% if post.picture? %>
+<%= image_tag post.picture.url(:medium), class: 'uploaded_pic' %><br>
+<% end %>
+<%= post.title %>
+<% post.tags.each do |tag| %>
+	<%= link_to(tag.text, tag_path(tag) ) %>
+<% end %>

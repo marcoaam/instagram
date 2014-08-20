@@ -1,18 +1,7 @@
+<div class="row">
 <% if @posts.any? %>
-	<div class="row">
-	<% @posts.each do |post| %>
-  	<div class="col-md-4">
-				<% if post.picture? %>
-				<%= image_tag post.picture.url(:medium), class: 'uploaded_pic' %><br>
-				<% end %>
-				<%= post.title %>
-				<% post.tags.each do |tag| %>
-					<%= link_to(tag.text, tag_path(tag) ) %>
-				<% end %>
-		</div>
-	<% end %>
-	</div>
+	<%= render @posts %>
 <% else %>
-		No posts have been added	
+		No posts have been added
 <% end %>
-<%= link_to('New post', new_post_path) %>
+</div>
