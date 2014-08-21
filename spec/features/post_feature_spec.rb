@@ -56,7 +56,7 @@ describe 'Posts' do
 
 		it 'shows a sign up button' do
 			visit ('/posts')
-			click_link 'Sign up'
+			click_button 'Sign up'
 			expect(page).to have_content 'Sign up'
 		end
 

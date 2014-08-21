@@ -3,11 +3,12 @@ require 'rails_helper'
 describe 'User' do
 
 	it 'can sign up' do
-		visit ('/users/sign_up')
+		visit ('/posts')
+		click_button 'Sign up'
 		fill_in ('user[email]'), with: 'm@m.com'
 		fill_in ('user[password]'), with: '12345678'
 		fill_in ('user[password_confirmation]'), with: '12345678'
-		click_button 'Sign up'
+		click_button 'Submit'
 		expect(User.first.email).to eq 'm@m.com'
 	end
 

@@ -42,7 +42,17 @@
 	      		<%= link_to('New post', new_post_path, class: 'navbar-right btn btn-top') %>
 					<% else %>
 						<% unless request.original_fullpath == '/users/sign_in' ||  request.original_fullpath == '/users/sign_up' %>
-							<%=link_to('Sign up', new_user_registration_path, class: 'navbar-right btn btn-top')%>  
+
+
+							
+
+                            <button class='navbar-right btn btn-top' data-toggle="modal" data-target="#myModal">Sign up 
+                            </button>
+
+
+
+
+
 							<%= form_for(User.new, as: :user, url: session_path(:user), html: { class: "navbar-form navbar-right" }, role: "form") do |f| %>
 								<div class="form-group">
 								  <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control" %>
@@ -62,6 +72,36 @@
     </div>
 
     <main class="container">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">SurfPost</h4>
+              </div>
+              <div class="modal-body">
+                <h2>Sign up</h2>
+
+                <%= form_for(User.new, as: :user, url: registration_path(:user), html: { class: 'form-signup'}) do |f| %>
+                  
+
+                  <div><%= f.label :email %><br />
+                  <%= f.email_field :email, autofocus: true, class: 'form-control' %></div>
+
+                  <div><%= f.label :password %><br />
+                    <%= f.password_field :password, autocomplete: "off", class: 'form-control' %></div>
+
+                  <div><%= f.label :password_confirmation %><br />
+                    <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %></div>
+              </div>
+              <div class="modal-footer">
+                <%= f.submit "Submit", class: "btn btn-lg btn-primary btn-block"%>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+
     	<%= yield %>
   	</main>
 
