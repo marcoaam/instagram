@@ -38,20 +38,16 @@
         <div class="navbar-collapse collapse">
 	    		<% if user_signed_in? %>
 						<%=link_to('Sign out', destroy_user_session_path, method: :delete, class: 'navbar-right btn btn-top') %>
-	      		<%= link_to('New post', new_post_path, class: 'navbar-right btn btn-top') %>
+	      		<%= link_to new_post_path, class: 'navbar-right btn btn-top' do %>
+              <span>New post</span>
+              <span class="glyphicon glyphicon-pencil"></span>
+            <% end %>
 					<% else %>
 						<% unless request.original_fullpath == '/users/sign_in' ||  request.original_fullpath == '/users/sign_up' %>
 
-
-							
-
-                            <button class='navbar-right btn btn-top' data-toggle="modal" data-target="#myModal">Sign up 
-                            </button>
-
-
-
-
-
+              <button class='navbar-right btn btn-top' data-toggle="modal" data-target="#myModal">Sign up 
+              </button>
+              
 							<%= form_for(User.new, as: :user, url: session_path(:user), html: { class: "navbar-form navbar-right" }, role: "form") do |f| %>
 								<div class="form-group">
 								  <%= f.email_field :email, autofocus: true, placeholder: "Email", class: "form-control" %>
@@ -114,7 +110,7 @@
       <hr>
 
       <footer class="container" >
-        <p>&copy; Company 2014</p>
+        <p>&copy; Marco Araujo 2014</p>
       </footer>
       <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

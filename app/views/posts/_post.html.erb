@@ -2,8 +2,10 @@
  	<% if post.picture? %>
 		<%= image_tag post.picture.url(:medium), class: 'uploaded_pic' %><br>
 		<% end %>
-		<%= post.title %> - 
-		Taken in <%= link_to post.address, post_maps_path(post) %>
+		<%= post.title %>
+		<% unless post.address.blank? %>
+			 - Taken in <%= link_to 'Map', post_maps_path(post), class: 'btn btn-primary' %>
+		<% end %>
 		<% post.tags.each do |tag| %>
 			<%= link_to(tag.text, tag_path(tag), class: 'tag' ) %>
 		<% end %>
