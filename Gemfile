@@ -8,6 +8,8 @@ gem 'bootstrap-sass'
 
 gem 'autoprefixer-rails'
 
+gem 'poltergeist'
+
 gem 'paperclip', github: 'thoughtbot/paperclip'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
