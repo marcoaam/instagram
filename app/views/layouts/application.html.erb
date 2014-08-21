@@ -77,12 +77,11 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title" id="myModalLabel">SurfPost</h4>
+                <h4 class="modal-title" id="myModalLabel">Sign up</h4>
               </div>
               <div class="modal-body">
-                <h2>Sign up</h2>
 
-                <%= form_for(User.new, as: :user, url: registration_path(:user), html: { class: 'form-signup'}) do |f| %>
+                <%= form_for(User.new, as: :user, url: registration_path(:user), html: { class: 'form-signup', role: 'form' }) do |f| %>
                   
 
                   <div><%= f.label :email %><br />
