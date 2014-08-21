@@ -5,6 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Post.destroy.all
+Post.destroy_all
 
-Post.create(title: 'Post number', image: Rails.root.join('spec/images/surf2.jpg'), tags_list: '#great #wave')
+1.upto(10) do |n|
+	tags = ['#surf', '#wave', '#mexico', '#sun', '#beach', '#sand', '#warmweather']
+	Post.create(title: "Post number #{n}", picture: File.new('spec/images/surf2.jpg'), tags_list: tags.sample(2).join(' '), address: '25 city road, london')
+end

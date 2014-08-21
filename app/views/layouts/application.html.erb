@@ -8,13 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
 
     <title>Instagram</title>
 
     <!-- Bootstrap core CSS -->
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-	  <%= csrf_meta_tags %>
   </head>
 
   <body>
@@ -117,6 +116,7 @@
       <footer class="container" >
         <p>&copy; Company 2014</p>
       </footer>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  </body>
+      <script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=true"></script>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      </body>
 </html>

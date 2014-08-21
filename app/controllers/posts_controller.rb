@@ -11,8 +11,12 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		Post.create(params[:post].permit(:title, :picture, :tags_list))
+		Post.create(params[:post].permit(:title, :picture, :tags_list, :address))
 		redirect_to '/posts'
+	end
+
+	def show
+		@post = Post.find(params[:id])
 	end
 
 end
