@@ -6,9 +6,9 @@ describe 'User' do
 		visit ('/posts')
 		click_button 'Sign up'
 		within(".modal-content") do
-			fill_in ('user[email]'), with: 'm@m2.com', match: :prefer_exact
-			fill_in ('user[password]'), with: '12345678', match: :prefer_exact
-			fill_in ('user[password_confirmation]'), with: '12345678', match: :prefer_exact
+			fill_in ('user[email]'), with: 'm@m2.com'
+			fill_in ('user[password]'), with: '12345678'
+			fill_in ('user[password_confirmation]'), with: '12345678'
 			click_button 'Submit'
 		end
 		expect(User.first.email).to eq 'm@m2.com'
