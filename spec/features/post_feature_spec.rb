@@ -82,6 +82,7 @@ describe 'Posts' do
 
 		    click_button 'Pay $5.00'
 			end
+			expect(current_path) == posts_path
 		end
 
 	end
