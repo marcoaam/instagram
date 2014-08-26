@@ -4,7 +4,7 @@
 		<% end %>
 		<%= post.title %>
 		<% unless post.address.blank? %>
-			 - Taken in <%= link_to 'Map', post_maps_path(post), class: 'btn btn-primary' %>
+			 - Taken in <%= link_to 'Map', post_maps_path(post), class: 'btn btn-primary map' %>
 		<% end %>
 		<% post.tags.each do |tag| %>
 			<%= link_to(tag.text, tag_path(tag), class: 'tag' ) %>
