@@ -47,7 +47,7 @@ describe 'Posts' do
 	context 'With posts created' do
 
 		before(:each) do
-			Post.create(title: 'Amazing day at Makers')
+			Post.create(title: 'Amazing day at Makers', price: 5)
 		end
 
 		it 'shows all posts' do
@@ -69,6 +69,11 @@ describe 'Posts' do
 			visit ('/posts')
 			click_button 'Sign up'
 			expect(page).to have_content 'Sign up'
+		end
+
+		it 'can take a payment', js: true do
+			visit '/posts'
+			expect(page).to have_css('button.stripe-button-el')
 		end
 
 	end
