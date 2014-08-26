@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+gem "codeclimate-test-reporter", group: :test, require: nil
+
 gem 'aws-sdk'
 
 gem 'devise'

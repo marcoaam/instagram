@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Post, :type => :model do
+	
 	context 'Tags' do
 
 		let(:post) { Post.create(title: 'Great day') }
