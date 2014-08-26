@@ -23,7 +23,7 @@ class Post < ActiveRecord::Base
   end
 
   def price_in_cents
-    self.price * 10
+    self.price * 100
   end
 	
 end
