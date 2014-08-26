@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem 'aws-sdk'
 
 gem 'devise'

@@ -34,4 +34,19 @@ RSpec.describe Post, :type => :model do
 
 	end
 
+	context 'Price' do
+
+		let(:post) { Post.create(title: 'Great day', price: 10) }
+		let(:post2) { Post.create(title: 'Great day', price: 5) }
+
+		it 'Converts the amount in stripe required amount' do
+			expect(post.price_in_cents).to eq 100
+		end
+
+		it 'Converts the amount in stripe required amount' do
+			expect(post2.price_in_cents).to eq 50
+		end
+
+	end
+
 end

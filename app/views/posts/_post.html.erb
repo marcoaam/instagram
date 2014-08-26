@@ -6,6 +6,22 @@
 		<% unless post.address.blank? %>
 			 - Taken in <%= link_to 'Map', post_maps_path(post), class: 'btn btn-primary map' %>
 		<% end %>
+
+		<% if post.price %>
+			<%= form_tag post_charge_path(post) do %>
+			  <article>
+			    <label class="buy_now">
+			      <%= "Buy now for $ #{post.price}" %>
+			    </label>
+			  </article>
+
+			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+			          data-description="Buy picture"
+			          data-amount="<%= post.price_in_cents %>"></script>
+			<% end %>
+		<% end %>
+	
 		<% post.tags.each do |tag| %>
 			<%= link_to(tag.text, tag_path(tag), class: 'tag' ) %>
 		<% end %>

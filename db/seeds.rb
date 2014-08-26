@@ -9,5 +9,5 @@ Post.destroy_all
 
 1.upto(10) do |n|
 	tags = ['#surf', '#wave', '#mexico', '#sun', '#beach', '#sand', '#warmweather']
-	Post.create(title: "Post number #{n}", picture: File.new('spec/images/surf2.jpg'), tags_list: tags.sample(2).join(' '), address: '25 city road, london')
+	Post.create(title: "Post number #{n}", picture: File.new('spec/images/surf2.jpg'), price: "#{n * 100}", tags_list: tags.sample(2).join(' '), address: '25 city road, london')
 end

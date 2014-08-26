@@ -31,6 +31,17 @@ describe 'Posts' do
 			expect(page).to have_css('img.uploaded_pic')
 		end
 
+		it 'creates a posts with a price' do
+			visit '/posts'
+			click_link 'New post'
+			fill_in 'Title', with: 'Amazing day at Makers'
+			fill_in 'Price', with: '5'
+			attach_file 'Picture', Rails.root.join('spec/images/surf2.jpg')
+			click_button 'Create Post'
+			expect(page).to have_css '.buy_now'
+			expect(page).to have_content '$ 5'
+		end
+
 	end
 
 	context 'With posts created' do

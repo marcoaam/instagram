@@ -21,5 +21,9 @@ class Post < ActiveRecord::Base
     return if all_tags.empty?
     all_tags.split(' ').uniq.each {|tag| self.tags << Tag.find_or_create_by(text: tag)}
   end
+
+  def price_in_cents
+    self.price * 10
+  end
 	
 end
