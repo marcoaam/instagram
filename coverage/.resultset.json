@@ -399,6 +399,12 @@
         null,
         null
       ],
+      "/Users/user/Documents/MA/week_9/instagram/config/initializers/pusher.rb": [
+        1,
+        null,
+        1,
+        1
+      ],
       "/Users/user/Documents/MA/week_9/instagram/config/initializers/session_store.rb": [
         null,
         null,
@@ -555,7 +561,7 @@
         null,
         null,
         1,
-        8,
+        7,
         null,
         null,
         null
@@ -565,7 +571,7 @@
         1,
         null,
         1,
-        7,
+        5,
         null,
         null,
         null
@@ -576,7 +582,7 @@
         1,
         null,
         1,
-        22,
+        18,
         null,
         null,
         1,
@@ -585,7 +591,10 @@
         null,
         1,
         4,
-        4,
+        null,
+        null,
+        null,
+        0,
         null,
         null,
         1,
@@ -625,6 +634,6 @@
         null
       ]
     },
-    "timestamp": 1409134659
+    "timestamp": 1409142015
   }
 }
