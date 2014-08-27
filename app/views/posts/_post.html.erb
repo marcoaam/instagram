@@ -4,25 +4,25 @@
 		<% end %>
 		<%= post.title %>
 		<% unless post.address.blank? %>
-			 - Taken in <%= link_to 'Map', post_maps_path(post), class: 'btn btn-primary map' %>
+			 <%= link_to 'Map', post_maps_path(post), class: 'glyphicon glyphicon-map-marker' %>
 		<% end %>
 
 		<% if post.price %>
-			<%= form_tag post_charge_path(post) do %>
-			  <article>
-			    <label class="buy_now">
-			      <%= "Buy now for $ #{post.price}" %>
-			    </label>
-			  </article>
+			<span><%= form_tag post_charge_path(post) do %>
+
+		    <label class="buy_now">
+		      <%= "$ #{post.price}" %>
+		    </label>
 
 			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-			          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-			          data-description="Buy picture"
-			          data-amount="<%= post.price_in_cents %>"></script>
-			<% end %>
+			     data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+			     data-description="Buy picture"
+			     data-amount="<%= post.price_in_cents %>"></script>
+				<% end %>
+			</span>
 		<% end %>
 	
-		<% post.tags.each do |tag| %>
+		<span class="glyphicon glyphicon-tags"> Tags</span> <% post.tags.each do |tag| %>
 			<%= link_to(tag.text, tag_path(tag), class: 'tag' ) %>
 		<% end %>
 </div>

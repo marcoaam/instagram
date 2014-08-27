@@ -11,7 +11,10 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		Post.create(params[:post].permit(:title, :picture, :price, :tags_list, :address))
+		current_user.posts.create(params[:post].permit(:title, :picture, :price, :tags_list, :address))
+		# Pusher['instagram_test'].trigger('my_event', {
+  #     message: 'hello world'
+  #   })
 		redirect_to '/posts'
 	end
 

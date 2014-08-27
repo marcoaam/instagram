@@ -6,6 +6,8 @@ gem "codeclimate-test-reporter", group: :test, require: nil
 
 gem 'aws-sdk'
 
+gem 'pusher'
+
 gem 'devise'
 
 gem 'bootstrap-sass'

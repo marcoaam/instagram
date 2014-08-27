@@ -36,8 +36,8 @@ body {
 		.tag {
 			background-color: orange;
 			color: white;
-			font-size: 14px;
-			padding: 3px 6px 3px 6px;
+			font-size: 11px;
+			padding: 2px 4px 2px 4px;
 			border-radius: inherit;
 		}
 
@@ -48,6 +48,12 @@ body {
 			padding: 4px 7px 4px 7px;
 			border-radius: inherit;
 		}
+
+		.glyphicon-tags {
+			color: gray;
+			font-size: 12px;
+		}
+		
 	}
 
 	.uploaded_pic {
