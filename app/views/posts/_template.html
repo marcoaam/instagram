@@ -1,0 +1,29 @@
+<div class="col-md-4">
+<script class="post_template" type="x-tmpl-mustache">
+ 	 if post.picture? 
+		 image_tag post.picture.url(:medium), class: 'uploaded_pic' <br>
+		 end 
+		 post.title 
+		 unless post.address.blank? 
+			  link_to 'Map', post_maps_path(post), class: 'glyphicon glyphicon-map-marker' 
+		 end 
+
+		 if post.price 
+			<span> form_tag post_charge_path(post) do 
+
+		    <label class="buy_now">
+		       { {post.price} }
+		    </label>
+
+			  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+			     data-key=" Rails.configuration.stripe[:publishable_key] "
+			     data-description="Buy picture"
+			     data-amount=" post.price_in_cents "></script>
+				 end 
+			</span>
+		 end 
+	
+		<span class="glyphicon glyphicon-tags"> Tags</span>  post.tags.each do |tag| 
+			 link_to(tag.text, tag_path(tag), class: 'tag' ) 
+		 end 
+</script>
