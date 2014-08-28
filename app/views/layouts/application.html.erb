@@ -9,10 +9,10 @@
     <meta name="author" content="">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <script src="//js.pusher.com/2.2/pusher.min.js" type="text/javascript"></script>
 
     <title>Instagram</title>
-
     <!-- Bootstrap core CSS -->
   </head>
 
@@ -37,7 +37,7 @@
         </div>
         <div class="navbar-collapse collapse">
 	    		<% if user_signed_in? %>
-						<%=link_to('Sign out', destroy_user_session_path, method: :delete, class: 'navbar-right btn btn-top') %>
+						<%=link_to('Sign out', destroy_user_session_path, method: :delete, class: 'navbar-right btn btn-danger') %>
 	      		<%= link_to new_post_path, class: 'navbar-right btn btn-top' do %>
               <span>New post</span>
               <span class="glyphicon glyphicon-pencil"></span>
@@ -45,7 +45,7 @@
 					<% else %>
 						<% unless request.original_fullpath == '/users/sign_in' ||  request.original_fullpath == '/users/sign_up' %>
 
-              <button class='navbar-right btn btn-top' data-toggle="modal" data-target="#myModal">Sign up 
+              <button class='navbar-right btn btn-top ' data-toggle="modal" data-target="#myModal">Sign up 
               </button>
               
 							<%= form_for(User.new, as: :user, url: session_path(:user), html: { class: "navbar-form navbar-right" }, role: "form") do |f| %>
