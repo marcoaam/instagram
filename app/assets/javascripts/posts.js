@@ -2,6 +2,6 @@ $(document).ready(function() {
 	var pusher = new Pusher('b3a141975cd83e2d9ace');
 	var channel = pusher.subscribe('instagram_test');
 	channel.bind('my_event', function(data) {
-	  $('.container .row').prepend('<a href="/" class="col-md-12 new_post">' + data.message + '</a>');
+	  $('.container .row').prepend('<div class="col-md-12"><a href="/" class="new_post">' + data.message + '</a></div>');
 	});
 });
