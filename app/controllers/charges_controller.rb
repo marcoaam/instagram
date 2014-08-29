@@ -16,11 +16,12 @@ class ChargesController < ApplicationController
 	    :currency    => 'usd'
 	  )
 
-	  redirect_to '/posts'
+		redirect_to '/posts'
 
 		rescue Stripe::CardError => e
 		  flash[:error] = e.message
 		  redirect_to '/posts'
+	  
 	end	
 	
 end
