@@ -47,3 +47,9 @@ How to test
 
 	cd instagram
 	rspec
+
+
+Still needs to be done
+----------------------
+
+- Get the full resolution picture after taking payment
